@@ -1,18 +1,22 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXrYix2NHdjG9LwxXIXyKQ-tQ0kgi8G2A&sensor=true" type="text/javascript"></script> -->
 <script>
 function MAP_initialize() {
+    console.log("MAP_initialize - START");
   var mapOptions = {
     zoom: 8,
     center: new google.maps.LatLng(-34.397, 150.644),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   var map = new google.maps.Map(document.getElementById("idMapCanvas"), mapOptions);
+  console.log("MAP_initialize - END");
 }
 function MAP_loadScript() {
+  console.log("MAP_loadScript - START");
   var script = document.createElement("script");
   script.type = "text/javascript";
   script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCXrYix2NHdjG9LwxXIXyKQ-tQ0kgi8G2A&sensor=true&callback=MAP_initialize";
   document.body.appendChild(script);
+  console.log("MAP_loadScript - END");
 }
 </script>
 
