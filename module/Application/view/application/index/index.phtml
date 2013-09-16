@@ -14,7 +14,7 @@ function MAP_loadScript() {
   console.log("MAP_loadScript - START");
   var script = document.createElement("script");
   script.type = "text/javascript";
-  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCXrYix2NHdjG9LwxXIXyKQ-tQ0kgi8G2A&sensor=true&callback=MAP_initialize";
+  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyCXrYix2NHdjG9LwxXIXyKQ-tQ0kgi8G2A&sensor=false&callback=MAP_initialize";
   document.body.appendChild(script);
   console.log("MAP_loadScript - END");
 }
