@@ -21,6 +21,8 @@ class IndexController extends AbstractActionController
     
     public function mapAction()
     {
-        retrn new ViewModel()->setTerminal(true);
+        $viewmodel = new ViewModel();
+        $viewmodel->setTerminal(true);
+        return $viewmodel;
     }
 }
