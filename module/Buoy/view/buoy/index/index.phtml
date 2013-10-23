@@ -78,24 +78,19 @@ function MAP_loadScript() {
             <a href='#idPopupMap' data-rel='popup' data-position-to='window' data-role='button' >1. Localisez moi !</a>
             <a href='#' data-rel='popup' data-position-to='window' data-role='button' >2. Donnez moi un nom !</a>
             <a href='#' data-rel='popup' data-position-to='window' data-role='button' >3. Envoyez les SMS !</a>
-            <a href="#popupVideo" data-rel="popup" data-position-to="window" data-role="button" data-theme="b">Launch video player</a>
             
             <!-- Popup for the map -->
             <div data-role="popup" id="idPopupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <iframe src="https://maps.google.com/?ll=48.83749,2.242815&spn=0.040393,0.096817&t=m&z=14" width="480" height="320" seamless></iframe>
+                <iframe src="http://dev.buoy.fr/home/map" width="280" height="320" seamless></iframe>
             </div>
             <!-- Popup for the event description -->
             <div data-role="popup" id="idPopupDesc" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
-                <iframe src="http://jesuisla.my.phpcloud.com/jesuisla/" width="497" height="298" seamless></iframe>
+                <iframe src="" width="497" height="298" seamless></iframe>
             </div>
             <!-- Popup for the sending of SMS -->
             <div data-role="popup" id="idPopupSMS" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
-                <iframe src="http://jesuisla.my.phpcloud.com/jesuisla/" width="497" height="298" seamless></iframe>
-            </div>
-            <!-- Popup video (for test purposes) -->
-            <div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
-                <iframe src="http://player.vimeo.com/video/41135183" width="497" height="298" seamless></iframe>
+                <iframe src="" width="497" height="298" seamless></iframe>
             </div>
         </div> 
 	<div data-role="footer">

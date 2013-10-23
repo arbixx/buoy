@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+        
+        <title>BUOY.fr - Je suis la !</title>
+        <!-- Le styles -->
+        <link href="css/jquery.mobile-1.2.0.min.css" media="screen" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <div data-role="page" data-theme="a"> 
+                <div data-role="header">
+                    <h1>I'm Fucking HERE !</h1>
+                </div> 
+                <div data-role="content">
+                    <p>"Je suis la!" est un service qui vous permet en 10 secondes d'envoyer votre position par SMS à vos amis. 100% efficace, 100% gratuit !</p>
+                    <hr/>
+                    <a href='#idPopupMap' data-rel='popup' data-position-to='window' data-role='button' >1. Localisez moi !</a>
+                    <a href='#' data-rel='popup' data-position-to='window' data-role='button' >2. Donnez moi un nom !</a>
+                    <a href='#' data-rel='popup' data-position-to='window' data-role='button' >3. Envoyez les SMS !</a>
+
+                    <!-- Popup for the map -->
+                    <div data-role="popup" id="idPopupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+                        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                        <iframe src="map.html" width="280" height="320" seamless></iframe>
+                    </div>
+                    <!-- Popup for the event description -->
+                    <div data-role="popup" id="idPopupDesc" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+                        <iframe src="" width="497" height="298" seamless></iframe>
+                    </div>
+                    <!-- Popup for the sending of SMS -->
+                    <div data-role="popup" id="idPopupSMS" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+                        <iframe src="" width="497" height="298" seamless></iframe>
+                    </div>
+                </div> 
+                <div data-role="footer">
+                    <h1>Copyright Ta Maman</h1>
+                </div> 
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script>
+            $( document ).on( "pageinit", function() {
+                $( "#popupVideo iframe" )
+                    .attr( "width", 0 )
+                    .attr( "height", 0 );
+
+                $( "#popupVideo" ).on({
+                    popupbeforeposition: function() {
+                        var size = scale( 600, 600, 15, 1 ),
+                            w = size.width,
+                            h = size.height;
+
+                        $( "#popupVideo iframe" )
+                            .attr( "width", w )
+                            .attr( "height", h );
+                    },
+                    popupafterclose: function() {
+                        $( "#popupVideo iframe" )
+                            .attr( "width", 0 )
+                            .attr( "height", 0 );    
+                    }
+                });
+            });
+        </script>
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXrYix2NHdjG9LwxXIXyKQ-tQ0kgi8G2A&amp;sensor=true"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            /** app.initialize(); */
+        </script>
+    </body>
+</html>
